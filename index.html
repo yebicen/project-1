@@ -22,16 +22,22 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+        
+        
+        
 
     <div class="nav-side-menu">
-        <div class="brand">Brand Logo</div>
+        <div class="brand">Quick Learn Tool    
+            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log in</button>
+        </div>
+        
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
 
             <ul id="menu-content" class="menu-content collapse out">
 
-                <li data-toggle="collapse" data-target="#web" class="collapsed active">
+                <li data-toggle="collapse" data-target="#web" class="collapsed">
                     <a href="#">
                         <i class="fa fa-globe fa-lg"></i>Web
                         <i class="fas fa-angle-down"></i>
@@ -82,6 +88,53 @@
             </ul>
         </div>
     </div>
+
+
+
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <div class="modal-header">
+                        <h5 class="modal-title">Sign In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                </div> <!-- /.modal-header -->
+    
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="uLogin" placeholder="Login">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div> <!-- /.form-group -->
+    
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="uPassword" placeholder="Password">
+                                <i class="fas fa-lock"></i>
+                            </div> <!-- /.input-group -->
+                        </div> <!-- /.form-group -->
+                    </form>
+    
+                </div> <!-- /.modal-body -->
+    
+                <div class="modal-footer">
+                    <button class="form-control btn btn-primary">Ok</button>
+    
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+                            <span class="sr-only">progress</span>
+                        </div>
+                    </div>
+                </div> <!-- /.modal-footer -->
+    
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 </body>
 
