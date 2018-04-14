@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
+    
     <title>Home</title>
 
 
@@ -22,6 +23,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="app.js"></script>    
 
 
 
@@ -47,107 +50,107 @@
                     </a>
                 </li>
                 <ul class="sub-menu collapse" id="web">
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>HTML</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>CSS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Bootstrap</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>SASS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>LESS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Javascript</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>ES6</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>jQuery</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>AJAX</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>JSON</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>ReactJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>AngularJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Angular 2</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Electron</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>BackboneJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>EmberJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>KnockoutJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Gulp</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Grunt</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Canvas</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>SVG</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Google Maps</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>HighCharts</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>XML</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>HTTP</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>IPv4</a>
                     </li>
@@ -161,27 +164,27 @@
                     </a>
                 </li>
                 <ul class="sub-menu collapse" id="mobile">
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i> iOS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Swift</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Objective -C</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Ionic</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>PhoneGap</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>JQuery Mobil</a>
                     </li>
@@ -195,47 +198,47 @@
                     </a>
                 </li>
                 <ul class="sub-menu collapse" id="server">
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Python</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Django</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Flask</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>NodeJS</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Koa</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>ExpressJs</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>PHP</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Laravel</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Ruby</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Ruby on Rails</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Perl</a>
                     </li>
@@ -247,27 +250,27 @@
                     </a>
                 </li>
                 <ul class="sub-menu collapse" id="other">ß
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Go Scala</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Lua</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>C</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>C++</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Java</a>
                     </li>
-                    <li>
+                    <li class="search-term">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Sed</a>
                     </li>

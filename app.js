@@ -10,5 +10,15 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
 
-    
+    var dataRef = firebase.database();
+    var term = "";
+
+    $(".search-term").on("click", function(event){
+        term = $(this).text();
+        console.log(term);
+        dataRef.ref().push({
+            term : term,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        })
+    })
 })
