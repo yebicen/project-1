@@ -11,6 +11,12 @@ body{
   margin-top: 8px;
 }
 
+/* API Responses Container */
+#content {
+  float: right;
+  width: calc(100% - 300px);
+}
+
 /* Login Modal */
 
 /*Login Launch button*/
@@ -187,6 +193,11 @@ body{
   @media (max-width: 769px) {
     #loginLaunch {
       margin-right: 60px;
+    }
+
+    #content {
+      float: none;
+      width: 100%;
     }
   }
   
