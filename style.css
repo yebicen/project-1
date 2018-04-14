@@ -1,9 +1,32 @@
 body{
     background:url('images/bg.jpg');
-    padding:50px;
+    padding:0;
+}
+
+/* my account button */
+#myAcct, #home {
+  font-size: 13px;
+  float: right;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+/* API Responses Container */
+#content {
+  float: right;
+  width: calc(100% - 300px);
 }
 
 /* Login Modal */
+
+/*Login Launch button*/
+#loginLaunch {
+  font-size: 13px;
+  float: right;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
 .modal-dialog {
     width: 300px;
 }
@@ -44,13 +67,18 @@ body{
     width: 300px;
     height: 100%;
     color: #e1ffff;
+    padding-top: 50px;
   }
   .nav-side-menu .brand {
+    width: 300px;
     background-color: #23282e;
+    height: 50px;
     line-height: 50px;
     display: block;
     text-align: center;
     font-size: 14px;
+    position:fixed;
+    top:0;
   }
   .nav-side-menu .toggle-btn {
     display: none;
@@ -160,8 +188,16 @@ body{
       display: block;
     }
   }
-  body {
-    margin: 0px;
-    padding: 0px;
+
+
+  @media (max-width: 769px) {
+    #loginLaunch {
+      margin-right: 60px;
+    }
+
+    #content {
+      float: none;
+      width: 100%;
+    }
   }
   
