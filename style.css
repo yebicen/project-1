@@ -3,6 +3,14 @@ body{
     padding:0;
 }
 
+/* my account button */
+#myAcct, #home {
+  font-size: 13px;
+  float: right;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
 /* Login Modal */
 
 /*Login Launch button*/
@@ -53,13 +61,18 @@ body{
     width: 300px;
     height: 100%;
     color: #e1ffff;
+    padding-top: 50px;
   }
   .nav-side-menu .brand {
+    width: 300px;
     background-color: #23282e;
+    height: 50px;
     line-height: 50px;
     display: block;
     text-align: center;
     font-size: 14px;
+    position:fixed;
+    top:0;
   }
   .nav-side-menu .toggle-btn {
     display: none;
