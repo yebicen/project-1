@@ -45,7 +45,7 @@ $(document).ready(function(){
               
                };
                var amaLink = "";
-               var x="";
+               var x=0;
               $.ajax({
                 url: "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" + $.param(params),
                 beforeSend: function(xhrObj){
