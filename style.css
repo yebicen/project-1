@@ -54,6 +54,12 @@ body{
     color: #666666;
 }
 
+/* WIKI PANEL BELOW */
+a{
+  margin-right: 100px;
+}
+
+
 /* SIDE NAVIGATION BELOW */
 
 .nav-side-menu {
@@ -200,4 +206,7 @@ body{
       width: 100%;
     }
   }
+
+
+
   
