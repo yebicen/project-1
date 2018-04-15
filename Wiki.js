@@ -52,7 +52,8 @@ $(document).ready(function(){
 
      //end of displayWikipedia function   
      //list books
-
+     $("#suggestedBooks").empty();
+     $('#onlineResources').empty();
      var topic = $(this).attr("data-name");
      var bookURL = "http://openlibrary.org/search.json?q=" + topic;
      
@@ -108,7 +109,6 @@ $(document).ready(function(){
                     xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", apikey);
                  },
                  type: "GET",
-                 // Request body 
                  data: "",
                })
                .done(function(data) {
@@ -116,10 +116,10 @@ $(document).ready(function(){
                  console.log(data);
                  amaLink = data.webPages.value[0].url;
                  x++;
-                     $("#buy"+x).attr("href", amaLink);
-                console.log(x);
-                 
+                 $("#buy"+x).attr("href", amaLink);
+                 console.log(x);               
                  console.log(amaLink);
+                 console.log($("#buy"+x).attr("href"));
                  
                })
                .fail(function() {
@@ -131,51 +131,51 @@ $(document).ready(function(){
              //assign href to buy button
  
      //custom bing search api
-     var docType = "pdf";
-     var onlineSearch = topic + " " + docType;
-     var params2 = {
-       // Request parameters
-         "q": onlineSearch,
-         "customconfig": customConfigId,
-         "mkt": "en-US",
-         "safe-search": "Moderate",
-         count: 5,
-         offset: 0
+    //  var docType = "pdf";
+    //  var onlineSearch = topic + " " + docType;
+    //  var params2 = {
+    //    // Request parameters
+    //      "q": onlineSearch,
+    //      "customconfig": customConfigId,
+    //      "mkt": "en-US",
+    //      "safe-search": "Moderate",
+    //      count: 5,
+    //      offset: 0
      
-      };
+    //   };
       
-     $.ajax({
-       url: "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" + $.param(params2),
-       beforeSend: function(xhrObj){
-           // Request headers
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", apikey);
-       },
-       type: "GET",
-       // Request body 
-       data: "",
-     })
-     .done(function(data) {
-       //alert("success");
-       console.log(data);
-       var y=0;
-       for (var i = 0; i < 5; i++) {
-         y=i+1;   
-         //console.log("i: "+ i+ " y: "+y);
+    //  $.ajax({
+    //    url: "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" + $.param(params2),
+    //    beforeSend: function(xhrObj){
+    //        // Request headers
+    //       xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", apikey);
+    //    },
+    //    type: "GET",
+    //    // Request body 
+    //    data: "",
+    //  })
+    //  .done(function(data) {
+    //    //alert("success");
+    //    console.log(data);
+    //    var y=0;
+    //    for (var i = 0; i < 5; i++) {
+    //      y=i+1;   
+    //      //console.log("i: "+ i+ " y: "+y);
            
-         $("<div>").attr("id","doc"+y).appendTo("#onlineResources");
-         $("<div>").text("Description: "+data.webPages.value[i].snippet).attr("class", "docDesc").prependTo("#doc"+y);   
-         $("<div>").text("Name: "+data.webPages.value[i].name).attr("class", "docName").prependTo("#doc"+y); 
+    //      $("<div>").attr("id","doc"+y).appendTo("#onlineResources");
+    //      $("<div>").text("Description: "+data.webPages.value[i].snippet).attr("class", "docDesc").prependTo("#doc"+y);   
+    //      $("<div>").text("Name: "+data.webPages.value[i].name).attr("class", "docName").prependTo("#doc"+y); 
         
-         $('<a role="button" class="btn btn-primary">').attr("id","download"+y).text("Download").appendTo("#doc"+y);
-         $('<button type="button" class="btn btn-dark">').text("Save").appendTo("#doc"+y);
-         $(("#download"+y)).attr("href",data.webPages.value[i].url);
-         $('<hr>').appendTo("#doc"+y);
+    //      $('<a role="button" class="btn btn-primary">').attr("id","download"+y).text("Download").appendTo("#doc"+y);
+    //      $('<button type="button" class="btn btn-dark">').text("Save").appendTo("#doc"+y);
+    //      $(("#download"+y)).attr("href",data.webPages.value[i].url);
+    //      $('<hr>').appendTo("#doc"+y);
                                    
-         }
-     })
-     .fail(function() {
-       console.log("error");
-     });
+    //      }
+    //  })
+    //  .fail(function() {
+    //    console.log("error");
+    //  });
  
  
  
