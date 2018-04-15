@@ -22,17 +22,14 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-        
-        
-        
+
+
+
 
     <div class="nav-side-menu">
         <div class="brand">
             <button id="loginLaunch" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log in / Register</button>
-            <a href="myacct.html">
-                <button id="myAcct" type="button" class="btn btn-info">My Account</button>
-            </a>
+            <a href="index.html"><button id="home" type="button" class="btn btn-info">Home</button></a>
         </div>
 
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -278,93 +275,27 @@
         </div>
     </div><!-- /.nav-side-menu -->
 
+
     <div id="content">
-        <div class="container">
-            <div class="row" id="headings">
-                <div class="col-12">
-                    <h1>Quick Learn Tool</h1>
-                    <h2>Go Ahead, Learn Something!</h2>
+            <div class="container">
+                <div class="row" id="headings">
+                    <div class="col-12">
+                        <h1>Quick Learn Tool</h1>
+                        <h2>Go Ahead, Learn Something!</h2>
+                    </div>
+                </div>
+                <div class="row" id="wiki">
+                    <div class="col-12">
+                        Wikipedia Article Will Appear Here
+                    </div>
+                </div>
+                <div class="row" id="book">
+                    <div class="col-12">
+                        Books Will Appear Here
+                    </div>
                 </div>
             </div>
-            <div class="row" id="wiki">
-                <div class="col-12">
-                    Wikipedia Article Will Appear Here
-                </div>
-            </div>
-            <div class="row" id="book">
-                <div class="col-12">
-                        <div class="container" id="suggestedBooks">
-                                <div id="book1" class="book">
-                                   
-                                    <a class="btn btn-primary" href="#" role="button" id="buy1">Buy</a>
-                                    <button type="button" class="btn btn-dark save" id="save1">Save</button>
-                                </div>
-                                <div id="book2" class="book">
-                                    
-                                        <a class="btn btn-primary" href="#" role="button" id="buy2">Buy</a>
-                                    <button type="button" class="btn btn-dark save" id="save2">Save</button>
-                                </div>
-                                <div id="book3" class="book">
-                                    
-                                        <a class="btn btn-primary" href="#" role="button" id="buy3">Buy</a>
-                                    <button type="button" class="btn btn-dark save" id="save3">Save</button>
-                                </div>
-                                <div id="book4" class="book">
-                                    
-                                        <a class="btn btn-primary" href="#" role="button" id="buy4">Buy</a>
-                                    <button type="button" class="btn btn-dark save" id="save4">Save</button>
-                                </div>
-                        
-                            </div>
-                        
-                          
-                        
-                            <div class="container" id="onlineResources">
-                                <div id="docTypeBtn">
-                                    <button type="button" class="btn btn-danger docType" id="pdf">PDF</button>
-                                    <button type="button" class="btn btn-danger docType" id="doc">DOC</button>
-                                     <button type="button" class="btn btn-danger docType" id="ppt">PPT</button>
-                                </div>
-                                <br>
-                                 <div id="doc1" class="onlineDoc">
-                        
-                                   <a class="btn btn-primary" href="#" role="button" id="download1">Download</a>
-                                   <button type="button" class="btn btn-dark">Save</button>
-                                </div>
-                                <hr>
-                                <br>
-                                <div id="doc2" class="onlineDoc">
-                          
-                                    <a class="btn btn-primary" href="#" role="button" id="download2">Download</a>
-                                    <button type="button" class="btn btn-dark">Save</button>
-                                </div>
-                                <hr>
-                                <br>
-                                <div id="doc3" class="onlineDoc">
-                         
-                                    <a class="btn btn-primary" href="#" role="button" id="download3">Download</a>
-                                    <button type="button" class="btn btn-dark">Save</button>
-                                </div>      
-                                <hr>
-                                <br>
-                                <div id="doc4" class="onlineDoc">
-                          
-                                     <a class="btn btn-primary" href="#" role="button" id="download4">Download</a>
-                                     <button type="button" class="btn btn-dark">Save</button>
-                                </div>
-                                <hr>
-                                <br>
-                                <div id="doc5" class="onlineDoc">
-                          
-                                        <a class="btn btn-primary" href="#" role="button" id="download5">Download</a>
-                                        <button type="button" class="btn btn-dark">Save</button>
-                                   </div>
-                                   <hr>
-                            </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- /#content -->
+        </div><!-- /#content -->
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -477,10 +408,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-     
-   
 
-    
 </body>
 
 </html>
