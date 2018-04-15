@@ -52,7 +52,8 @@ $(document).ready(function(){
 
      //end of displayWikipedia function   
      //list books
-
+     $("#suggestedBooks").empty();
+     $("#onlineResources").empty();
      var topic = $(this).attr("data-name");
      var bookURL = "http://openlibrary.org/search.json?q=" + topic;
      
