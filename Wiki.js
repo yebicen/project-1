@@ -42,6 +42,7 @@ $(document).ready(function(){
          });
 
      //end of displayWikipedia function   
+     //list books
 
      var topic = $(this).attr("data-name");
      var bookURL = "http://openlibrary.org/search.json?q=" + topic;
@@ -56,13 +57,15 @@ $(document).ready(function(){
          method: "GET"
        }).then(function(response) {
          //console.log(response.docs[1].title);
-         console.log(JSON.parse(response).docs[0]);
-         console.log(JSON.parse(response).docs.length);
+         //console.log(JSON.parse(response).docs[0]);
+         //console.log(JSON.parse(response).docs.length);
          var n = 0;
          for (var i = 0; i < 4; i++) {
              n=i+1;   
-             console.log("i: "+ i+ " n: "+n);
-             $("<div>").text("ISBN: "+JSON.parse(response).docs[i].isbn[0]+'; '+JSON.parse(response).docs[i].isbn[1]).attr("class", "isbn").prependTo("#book"+n);
+             $('<div>').attr({"id":"book"+n,"class":"book"}).appendTo("#suggestedBooks");
+             //console.log("i: "+ i+ " n: "+n);
+             var isbnText =JSON.parse(response).docs[i].isbn[0]+'; '+JSON.parse(response).docs[i].isbn[1];
+             $("<div>").text("ISBN: "+isbnText).attr("class", "isbn").prependTo("#book"+n);
              var bookAuthor = JSON.parse(response).docs[i].author_name;
              $("<div>").text("Author: "+bookAuthor).attr("class","bookauthor").prependTo("#book"+n);
              if (JSON.parse(response).docs[i].subtitle) {
@@ -72,7 +75,9 @@ $(document).ready(function(){
                  bookName = JSON.parse(response).docs[i].title;
                  $("<div>").text("Title: "+bookName).attr("class","bookname").prependTo("#book"+n);
                }
-               
+             $("<a role=button>").attr({"class":"btn btn-primary", "id":"buy"+n}).text("Buy").appendTo("#book"+n);
+             $("<button type=button>").attr({"class":"btn btn-dark save", "id":"save"+n}).text("Save").appendTo("#book"+n);
+        
                var searchTerm = bookName + " " + bookAuthor + " " + ecommerceWeb;
                console.log(searchTerm);
                var params = {
@@ -81,7 +86,7 @@ $(document).ready(function(){
                    "customconfig": customConfigId,
                    "mkt": "en-US",
                    "safe-search": "Moderate",
-                   count: 3,
+                   count: 1,
                    offset: 0
                
                 };
@@ -99,25 +104,19 @@ $(document).ready(function(){
                })
                .done(function(data) {
                  //alert("success");
-                 
+                 console.log(data);
                  amaLink = data.webPages.value[0].url;
                  x++;
                      $("#buy"+x).attr("href", amaLink);
-                     console.log(x);
+                console.log(x);
                  
                  console.log(amaLink);
                  
-                 //console.log($("#buy"+n).attr("href"));
-                 //$("#buy"+n).attr("href", amaLink);
-                 // $('<a class="btn btn-primary" role="button">').attr("href",amaLink).text("Buy").appendTo("#book"+n);
                })
                .fail(function() {
                  console.log("error");
                });
-               //console.log(amaLink);
-             //$("#buy"+n).attr("href", amaLink);  //need to test tmrw
-             //<a class="btn btn-primary" href="#" role="button" id="buy4">Buy</a>
-             //$('<a class="btn btn-primary" role="button">').attr("href",amaLink).text("Buy").appendTo("#book"+n);
+              
           }
        });
              //assign href to buy button
@@ -125,7 +124,6 @@ $(document).ready(function(){
      //custom bing search api
      var docType = "pdf";
      var onlineSearch = topic + " " + docType;
-     console.log(onlineSearch);
      var params2 = {
        // Request parameters
          "q": onlineSearch,
@@ -155,11 +153,15 @@ $(document).ready(function(){
          y=i+1;   
          //console.log("i: "+ i+ " y: "+y);
            
-         
+         $("<div>").attr("id","doc"+y).appendTo("#onlineResources");
          $("<div>").text("Description: "+data.webPages.value[i].snippet).attr("class", "docDesc").prependTo("#doc"+y);   
          $("<div>").text("Name: "+data.webPages.value[i].name).attr("class", "docName").prependTo("#doc"+y); 
+        
+         $('<a role="button" class="btn btn-primary">').attr("id","download"+y).text("Download").appendTo("#doc"+y);
+         $('<button type="button" class="btn btn-dark">').text("Save").appendTo("#doc"+y);
          $(("#download"+y)).attr("href",data.webPages.value[i].url);
-           
+         $('<hr>').appendTo("#doc"+y);
+                                   
          }
      })
      .fail(function() {
@@ -167,57 +169,6 @@ $(document).ready(function(){
      });
  
  
- //click Doctype
-      $('.docType').on("click",function(){
-        console.log(this);
-        docType = $(this).attr("id");
-        $(".docDesc").remove();
-        $(".docName").remove();
-        var onlineSearch = topic + " " + docType;
-        console.log(onlineSearch);
-        var params2 = {
-       // Request parameters
-            "q": onlineSearch,
-            "customconfig": customConfigId,
-            "mkt": "en-US",
-            "safe-search": "Moderate",
-            count: 5,
-            offset: 0
-     
-         };
-      
-         $.ajax({
-            url: "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" + $.param(params2),
-            beforeSend: function(xhrObj){
-           // Request headers
-            xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", apikey);
-         },
-            type: "GET",
-       // Request body 
-            data: "",
-          })
-         .done(function(data) {
-          //alert("success");
-          console.log(data);
-          var y=0;
-          for (var i = 0; i < 5; i++) {
-            y=i+1;   
-         //console.log("i: "+ i+ " y: "+y);
-                  
-            
-            $("<div>").text("Description: "+data.webPages.value[i].snippet).attr("class", "docDesc").prependTo("#doc"+y);
-            $("<div>").text("Name: "+data.webPages.value[i].name).attr("class", "docName").prependTo("#doc"+y);
-            $(("#download"+y)).attr("href",data.webPages.value[i].url);
-           
-            }
-         })
-        .fail(function() {
-         console.log("error");
-         });
- 
- 
- 
-      });
  
     }
 
