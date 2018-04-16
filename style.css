@@ -4,7 +4,7 @@ body{
 }
 
 /* my account button */
-#myAcct, #home {
+#myAcct, #home, #logout {
   font-size: 13px;
   float: right;
   margin-right: 8px;
@@ -55,7 +55,7 @@ body{
 }
 
 /* WIKI PANEL BELOW */
-a{
+#wiki a{
   margin-right: 100px;
 }
 
