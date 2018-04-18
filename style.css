@@ -1,10 +1,24 @@
 body{
-    background:url('images/bg.jpg');
+    background:url('images/bg2.jpg');
     padding:0;
 }
 
+.pagetitle{
+text-align: center;
+font-family: 'Baskerville', Times, serif;
+color: white;
+font-size: 50px;
+margin-top:0;
+}
+.pagesubtitle{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color:white;
+  margin-bottom:0;
+  }
 /* my account button */
-#myAcct, #home {
+#myAcct, #home, #logout {
   font-size: 13px;
   float: right;
   margin-right: 8px;
@@ -55,7 +69,7 @@ body{
 }
 
 /* WIKI PANEL BELOW */
-a{
+#wiki a{
   margin-right: 100px;
 }
 
@@ -165,7 +179,6 @@ a{
   }
 /* bookapi css */
   .book  {
-    width: 23%;
     float:left;
     border: 1px solid lightgrey;
     border-radius: 3px;
@@ -173,11 +186,33 @@ a{
     font-weight: 10px;
     padding: 5px;
   }
+  .card-group{
+    float: left;
+    margin-bottom:25px;
+  }
+
+  .panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(6, 75, 131, 0.699)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(249, 250, 250, 0.7)!important;
+}
+ 
+
   .isbn {
     width: 100%;
     overflow: hidden;
   }
-
+.bookbtn, 
+.save{
+  margin:10px;
+  color:inherit;
+}
 
   @media (max-width: 767px) {
     .nav-side-menu {
