@@ -254,7 +254,7 @@
                         <i class="fas fa-angle-down"></i>
                     </a>
                 </li>
-                <ul class="sub-menu collapse" id="other">ß
+                <ul class="sub-menu collapse" id="other">
                     <li class="term" data-name="Scala (programming language)">
                         <a href="#">
                             <i class="fas fa-caret-right"></i>Go Scala</a>
@@ -288,22 +288,18 @@
     <div id="content">
             <img src="images/web.jpg" width=100% alt="IMAGE LOADING">
         <div class="container">
-        <div class="row" id="headings">
+            <div class="row" id="headings">
                 <div class="col-12">
                     <p class="pagesubtitle"><strong>Quick Learn Tool</strong></p>
                     <h1 class="pagetitle"><strong>EVERYDAY LEARN</strong> </h1>
                 </div>
             </div>
-            
-           
-            <div class="row" id="wiki">  
-            </div>
+          
+            <div class="row" id="wiki"></div>
 
-            <div class="block row" id="suggestedBooks">
-            </div>
+            <div class="block row" id="suggestedBooks"></div>
 
-            <div class="row" id="onlineResources">
-            </div>
+            <div class="row" id="onlineResources"></div>
 
 
         </div>
@@ -421,7 +417,22 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-     
+
+    <!-- below is save confirmation modal -->
+     <div id="saveModal" class="modal fade" role="dialog">
+         <div class="modal-dialog modal-sm saveM">
+             <div class="modal-content saveM">
+                 <div class = "modal-header saveM">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title saveM">Confirmed</h4>
+                 </div>
+                 <div class = "modal-body saveM" id="saveinfo"></div>
+                 <div class = "modal-footer saveM">
+                     <button type="button" class ="btn btn-default" data-dismiss = "modal">Close</button>
+                 </div>
+             </div>
+         </div>
+     </div>
    
 
     

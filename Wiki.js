@@ -4,7 +4,7 @@ $(document).ready(function(){
         $("#wiki").empty();
 
         var searchID = $(this).attr("data-name");
-        console.log(searchID);
+        //console.log(searchID);
 
         var queryURL = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchID;
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
             var newPanelbody = $("<div>").attr("class","panel-body panel-transparent");
             var externalWikiLink = $("<div>").attr("class","alert alert-secondary");
 
-            console.log(response.content_urls.desktop.page)
+            //console.log(response.content_urls.desktop.page)
 
             var pThree = "<a href="  + response.content_urls.desktop.page + " target='_blank'><strong>Check more on Wikipedia</strong></a>";
             $(pThree).attr("class","alert-link");
@@ -76,8 +76,8 @@ $(document).ready(function(){
          
          var n = 0;
          var minCt = Math.min(4,JSON.parse(response).docs.length);
-         console.log(JSON.parse(response).docs.length);
-         console.log(minCt);
+         //console.log(JSON.parse(response).docs.length);
+        // console.log(minCt);
          for (var i = 0; i < minCt; i++) {
              n=i+1;   
              var cardgroup = $("<div>").attr("class", "card-group")
@@ -98,11 +98,11 @@ $(document).ready(function(){
             
              var bottom = $("<div>").attr("class","card-footer")
              $("<a role=button>").attr({"class":"btn btn-warning bookbtn", "id":"buy"+n}).text("Buy").appendTo(bottom);
-             $("<button type=button>").attr({"class":"btn btn-warning save", "id":"save"+n}).text("Save").appendTo(bottom);
+             $("<button type=button>").attr({"class":"btn btn-warning save", "id":"save"+n, "data-toggle":"modal","data-target":"#saveModal"}).text("Save").appendTo(bottom);
              bottom.appendTo("#book"+n);
         
                var searchTerm = bookName + " " + bookAuthor + " " + ecommerceWeb;
-               console.log(searchTerm);
+               //console.log(searchTerm);
                var params = {
                  // Request parameters
                    "q": searchTerm,
@@ -126,14 +126,14 @@ $(document).ready(function(){
                })
                .done(function(data) {
                  //alert("success");
-                 console.log(data);
+                 //console.log(data);
                  amaLink = data.webPages.value[0].url;
                  x++;
                  $("#buy"+x).attr("href", amaLink);
                  $("#buy"+x).attr("target", "_blank");
-                 console.log(x);               
-                 console.log(amaLink);
-                 console.log($("#buy"+x).attr("href"));
+                //  console.log(x);               
+                //  console.log(amaLink);
+                //  console.log($("#buy"+x).attr("href"));
                  
                })
                .fail(function() {
@@ -170,7 +170,7 @@ $(document).ready(function(){
      })
      .done(function(data) {
        //alert("success");
-       console.log(data);
+       //console.log(data);
        var y=0;
        for (var i = 0; i < 5; i++) {
          y=i+1;   
@@ -192,8 +192,8 @@ $(document).ready(function(){
         
          var panelbottom = $("<div>").attr("class","alert alert-secondary panel-transparent");
          panelbottom.appendTo(panelgroup2body);
-         $('<a role="button" class="btn btn-primary">').attr("id","download"+y).text("Download").appendTo(panelbottom);
-         $('<button type="button" class="btn btn-dark">').text("Save").appendTo(panelbottom);
+         $('<a role="button" class="btn btn-primary bookbtn">').attr("id","download"+y).text("Download").appendTo(panelbottom);
+         $('<button type="button">').attr({"class":"btn btn-warning save", "data-toggle":"modal","data-target":"#saveModal"}).text("Save").appendTo(panelbottom);
          $(("#download"+y)).attr("href",data.webPages.value[i].url);
                                    
          }
@@ -209,9 +209,31 @@ $(document).ready(function(){
     //onclick the term items    
     $(".term").on("click", displayWikipedia);
      
-    $('#bookList').on("click", 'button[class=save]',function(){
-
+    $('#suggestedBooks').on("click", 'button[class="btn btn-warning save"]',function(event) {
+      event.preventDefault();
+      $("#saveinfo").empty();
+      //console.log($(this));
+      console.log($(this).parent().children(".bookbtn").attr("href"));
+        var bName = $(this).parent().parent().children(".bookname").text();
+        var bLink = $(this).parent().children(".bookbtn").attr("href");
+        $("#saveinfo").append("<p>").text(bName + " is saved!");
+      //console.log(bName);
+      //console.log(bLink);
     });
+
+    $('#onlineResources').on("click", 'button[class="btn btn-warning save"]',function(event) {
+      event.preventDefault();
+      //console.log($(this).parent().parent().parent().children(".docName"));
+      $("#saveinfo").empty();
+      var bName = $(this).parent().parent().parent().children(".docName").text();   //docName panel-heading
+      var bLink = $(this).parent().children(".bookbtn").attr("href");
+      $("#saveinfo").append("<p>").text(bName + " is saved!");
+      //console.log(bName);
+      //console.log(bLink);
+    });
+
+
+
 //end of ducoment ready	
 });
     
