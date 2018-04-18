@@ -66,7 +66,7 @@ $(document).ready(function(){
          url: bookURL,
          method: "GET"
        }).then(function(response) {
-         console.log(response);
+         
 
          //console.log(response.docs[1].title);
          //console.log(JSON.parse(response).docs[0]);
@@ -75,7 +75,10 @@ $(document).ready(function(){
 
          
          var n = 0;
-         for (var i = 0; i < 4; i++) {
+         var minCt = Math.min(4,JSON.parse(response).docs.length);
+         console.log(JSON.parse(response).docs.length);
+         console.log(minCt);
+         for (var i = 0; i < minCt; i++) {
              n=i+1;   
              var cardgroup = $("<div>").attr("class", "card-group")
              cardgroup.appendTo("#suggestedBooks")
