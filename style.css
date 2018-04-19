@@ -63,9 +63,15 @@ margin-top:0;
 
 .modal-body .fas {
     padding-left: 10px;
-    font-size: 22px;
     padding-top: 6px;
+    font-size: 22px;
     color: #666666;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.modal-content .fade.active {
+  opacity: 1;
 }
 
 /* WIKI PANEL BELOW */
@@ -256,6 +262,10 @@ margin-top:0;
       float: none;
       width: 100%;
     }
+
+   .modal .modal-dialog {
+     margin: 10px auto;
+   }
   }
 
 
