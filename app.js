@@ -42,11 +42,13 @@ $(document).ready(function () {
 
     });
 
+
     $("#signInBtn").on("click", function (event) {
         event.preventDefault();
         var email = $("#uEmailLogin").val().trim();
         var password = $("#uLoginPassword").val().trim();
         console.log('trying to log in!');
+
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -60,10 +62,13 @@ $(document).ready(function () {
             if (user) {
                 console.log('signed in! Auth state change detected!');
                 console.log(user);
-                $('#signInBtn').hide();
+                $('#loginLaunch').hide();
+                $('#logout').show();
+                $('.close').click();
             } else {
                 console.log('not signed in. Auth state change detected!');
-                $('#signInBtn').show();
+                $('#loginLaunch').show();
+                $('#logout').hide();
             }
         });
     });
@@ -85,13 +90,15 @@ $(document).ready(function () {
         if (user) {
             console.log('signed in! Auth state change detected!');
             console.log(user.uid);
-            $('#signInBtn').hide();
-
+            $('#loginLaunch').hide();
+            $('#logout').show();
+            $('.close').click();
             // User is signed in.
         } else {
             // No user is signed in.
             console.log('not signed in. Auth state change detected!');
-            $('#signInBtn').show();
+            $('#loginLaunch').show();
+            $('#logout').hide();
         }
     });
     $(".term").on("click", function (event) {
