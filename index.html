@@ -15,7 +15,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="Wiki.js"></script>
+    <script src="app.js"></script>
     <title>Home</title>
 
 
@@ -36,7 +38,7 @@
     <div class="nav-side-menu">
         <div class="brand">
             <button id="loginLaunch" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log in / Register</button>
-            <button id="logout" class="btn btn-primary">Log Out</button>
+            <button id="logOutBtn" class="btn btn-primary">Log Out</button>
             <a href="myacct.html">
                 <button id="myAcct" type="button" class="btn btn-info">My Account</button>
             </a>
@@ -331,7 +333,7 @@
                             <form role="form">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="uLogin" placeholder="Email">
+                                        <input type="email" class="form-control" id="uEmailLogin" placeholder="Email">
                                         <i class="fas fa-user"></i>
                                     </div>
                                 </div>
@@ -351,7 +353,7 @@
                         <!-- /.modal-body -->
 
                         <div class="modal-footer">
-                            <button class="form-control btn btn-primary">Sign In</button>
+                            <button class="form-control btn btn-primary" id="signInBtn">Sign In</button>
 
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100"
@@ -367,7 +369,7 @@
                             <form role="form">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="uRegister" placeholder="Email">
+                                        <input type="email" class="form-control" id="uEmailRegister" placeholder="Email">
                                         <i class="fas fa-user"></i>
                                     </div>
                                 </div>
@@ -384,7 +386,7 @@
 
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="uRegPassword" placeholder="Re-Enter Password">
+                                        <input type="password" class="form-control" id="uRegReenterPassword" placeholder="Re-Enter Password">
                                         <i class="fas fa-lock"></i>
                                     </div>
                                     <!-- /.input-group -->
@@ -396,7 +398,7 @@
                         <!-- /.modal-body -->
 
                         <div class="modal-footer">
-                            <button class="form-control btn btn-success">Register</button>
+                            <button class="form-control btn btn-success" id="registerBtn">Register</button>
 
                             <div class="progress">
                                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100"
