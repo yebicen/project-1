@@ -78,6 +78,7 @@ $(document).ready(function () {
         firebase.auth().signOut().then(function () {
             console.log('signed out!');
             // Sign-out successful.
+            $('#logout').hide();
         }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -99,6 +100,7 @@ $(document).ready(function () {
             console.log('not signed in. Auth state change detected!');
             $('#loginLaunch').show();
             $('#logout').hide();
+
         }
     });
     $(".term").on("click", function (event) {
