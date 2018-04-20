@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
@@ -99,6 +100,7 @@ $(document).ready(function () {
                 });
                 console.log("worked!");
                 console.log(term);
+                
             });
             console.log('signed in! Auth state change detected!');
             console.log(user.uid);
@@ -113,7 +115,9 @@ $(document).ready(function () {
             $('#logout').hide();
 
         }
+
     });
+    console.log('database:' + firebase.database());
 
     
 });
