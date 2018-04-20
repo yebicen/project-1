@@ -89,6 +89,17 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         user = firebase.auth().currentUser;
         if (user) {
+            var user = firebase.auth().currentUser;
+            userUID = user.uid;
+            $(".term").on("click", function (event) {
+                var term = $(this).attr("data-name");
+                firebase.database().ref('/Users/' + userUID).push({
+                    term: term,
+                    dateAdded: firebase.database.ServerValue.TIMESTAMP
+                });
+                console.log("worked!");
+                console.log(term);
+            });
             console.log('signed in! Auth state change detected!');
             console.log(user.uid);
             $('#loginLaunch').hide();
@@ -103,23 +114,6 @@ $(document).ready(function () {
 
         }
     });
-    $(".term").on("click", function (event) {
-        var user = firebase.auth().currentUser;
-        userUID = user.uid;
-        if (user) {
-            var term = $(this).text();
-            console.log(term);
-            //?????????????????????????????????????????????????????????????????
-            firebase.database().ref('/Users/' + userUID + '/search/').push({
-                term: term,
-                dateAdded: firebase.database.ServerValue.TIMESTAMP
-            });
-            //?????????????????????????????????????????????????????????????????
-        } else {
-            console.log("you need to sign in first!")
-        }
 
-
-    })
-
+    
 });
