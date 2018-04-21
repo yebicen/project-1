@@ -22,7 +22,7 @@ margin-top:0;
   margin-bottom:0;
   }
 /* my account button */
-#myAcct, #home, #logout {
+#myAcct, #home, #logOutBtn {
   font-size: 13px;
   float: right;
   margin-right: 8px;

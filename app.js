@@ -1,12 +1,12 @@
 $(document).ready(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
-        authDomain: "project-1-97352.firebaseapp.com",
-        databaseURL: "https://project-1-97352.firebaseio.com",
-        projectId: "project-1-97352",
-        storageBucket: "project-1-97352.appspot.com",
-        messagingSenderId: "711415812320"
+        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
+        authDomain: "project1-e7460.firebaseapp.com",
+        databaseURL: "https://project1-e7460.firebaseio.com",
+        projectId: "project1-e7460",
+        storageBucket: "project1-e7460.appspot.com",
+        messagingSenderId: "87795057294"
     };
     firebase.initializeApp(config);
     // Get a reference to the database service
@@ -27,6 +27,7 @@ $(document).ready(function () {
                 console.log(errorCode);
                 console.log(errorMessage);
             }).then(function (user) {
+                $('#loginLaunch').click();
                 console.log('User created!');
                 userUID = firebase.auth().currentUser.uid;
                 console.log(user.uid);
@@ -56,20 +57,9 @@ $(document).ready(function () {
             console.log(errorCode);
             console.log(errorMessage);
             // ...
-        }).then(function (user) {
-            var user = firebase.auth().currentUser;
-            console.log(user);
-            if (user) {
-                console.log('signed in! Auth state change detected!');
-                console.log(user);
-                $('#loginLaunch').hide();
-                $('#logout').show();
-                $('.close').click();
-            } else {
-                console.log('not signed in. Auth state change detected!');
-                $('#loginLaunch').show();
-                $('#logout').hide();
-            }
+        }).then(function(){
+            $('#loginLaunch').click();
+            $('#myAcct').show();
         });
     });
     $("#logOutBtn").on("click", function (event) {
@@ -78,7 +68,7 @@ $(document).ready(function () {
         firebase.auth().signOut().then(function () {
             console.log('signed out!');
             // Sign-out successful.
-            $('#logout').hide();
+            $('#logOutBtn').hide();
         }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -93,27 +83,37 @@ $(document).ready(function () {
             userUID = user.uid;
             $(".term").on("click", function (event) {
                 var term = $(this).attr("data-name");
-                firebase.database().ref('/Users/' + userUID).push({
+                firebase.database().ref('/Users/' + userUID).set({
                     term: term,
                     dateAdded: firebase.database.ServerValue.TIMESTAMP
                 });
                 console.log("worked!");
                 console.log(term);
             });
+
+            $('#test').on("click", function (event) {
+                var ref = firebase.database().ref('/Users/' + userUID);
+                ref.once("value").then(function (snapshot) {
+                    console.log(snapshot.child("email").val());
+                    console.log(snapshot.child().child("term").val());
+                });
+            });
+
             console.log('signed in! Auth state change detected!');
             console.log(user.uid);
             $('#loginLaunch').hide();
-            $('#logout').show();
-            $('.close').click();
+            $('#logOutBtn').show();
+            $('#myAcct').show();
             // User is signed in.
         } else {
             // No user is signed in.
             console.log('not signed in. Auth state change detected!');
             $('#loginLaunch').show();
-            $('#logout').hide();
-
+            $('#logOutBtn').hide();
+            $('#myAcct').hide();
         }
+        
     });
 
-    
+
 });
