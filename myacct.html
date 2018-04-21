@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<<<<<<< HEAD
    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
@@ -21,12 +22,26 @@
     <script src="app2.js"></script>
     <title>Home</title>
 
+=======
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="Wiki.js"></script>
+    <script src="app.js"></script>
+    <title>Home</title>
+
+>>>>>>> master
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117929335-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-117929335-1');
@@ -47,10 +62,12 @@
         
         
 
+
     <div class="nav-side-menu">
         <div class="brand">
             <button id="loginLaunch" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log in / Register</button>
             <button id="logOutBtn" class="btn btn-primary">Log Out</button>
+<<<<<<< HEAD
             <a href="myacct.html">
                 <button id="myAcct" type="button" class="btn btn-info">My Collection</button>
             </a>
@@ -59,8 +76,13 @@
             </a>
             <a href="myacct.html">
                 <button id="myAcctNew" type="button" class="btn btn-info">My Collection</button>
+=======
+            <a href="index.html">
+                <button id="home" type="button" class="btn btn-info">Home</button>
+>>>>>>> master
             </a>
         </div>
+
 
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
@@ -303,6 +325,7 @@
 
             </ul>
         </div>
+<<<<<<< HEAD
     </div><!-- /.nav-side-menu -->
 
     <div id="content">
@@ -315,6 +338,35 @@
                 </div>
             </div>
           
+=======
+    </div>
+    <!-- /.nav-side-menu -->
+
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <table class="table table-striped">
+                    <thead>
+                        <th scope="col">Search Term</th>
+                        <th scope="col">Times Searched</th>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <img src="images/web.jpg" width=100% alt="IMAGE LOADING">
+        <div class="container">
+            <div class="row" id="headings">
+                <div class="col-12">
+                    <p class="pagesubtitle">
+                        <strong>Quick Learn Tool</strong>
+                    </p>
+                    <h1 class="pagetitle">
+                        <strong>Learn Every Day</strong>
+                    </h1>
+                </div>
+            </div>
+
+>>>>>>> master
             <div class="row" id="wiki"></div>
 
             <div class="block row" id="suggestedBooks"></div>
@@ -323,8 +375,14 @@
 
 
         </div>
+<<<<<<< HEAD
     </div><!-- /#content -->
    
+=======
+    </div>
+    <!-- /#content -->
+
+>>>>>>> master
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -439,6 +497,7 @@
     <!-- /.modal -->
 
     <!-- below is save confirmation modal -->
+<<<<<<< HEAD
      <div id="saveModal" class="modal fade" role="dialog">
          <div class="modal-dialog modal-sm saveM">
              <div class="modal-content saveM">
@@ -456,6 +515,25 @@
    
 
     
+=======
+    <div id="saveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm saveM">
+            <div class="modal-content saveM">
+                <div class="modal-header saveM">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title saveM">Confirmed</h4>
+                </div>
+                <div class="modal-body saveM" id="saveinfo"></div>
+                <div class="modal-footer saveM">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+>>>>>>> master
 </body>
 
 </html>

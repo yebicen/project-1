@@ -1,11 +1,11 @@
 $(document).ready(function () {
     var config = {
-        apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
-        authDomain: "project-1-97352.firebaseapp.com",
-        databaseURL: "https://project-1-97352.firebaseio.com",
-        projectId: "project-1-97352",
-        storageBucket: "project-1-97352.appspot.com",
-        messagingSenderId: "711415812320"
+        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
+        authDomain: "project1-e7460.firebaseapp.com",
+        databaseURL: "https://project1-e7460.firebaseio.com",
+        projectId: "project1-e7460",
+        storageBucket: "project1-e7460.appspot.com",
+        messagingSenderId: "87795057294"
     };
     firebase.initializeApp(config);
 
@@ -19,7 +19,12 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
+<<<<<<< HEAD
     
+=======
+
+
+>>>>>>> master
     firebase.auth().onAuthStateChanged(function (user) {
         user = firebase.auth().currentUser;
         if (user) {
@@ -40,5 +45,12 @@ $(document).ready(function () {
             // No user is signed in.
             console.log('not signed in. Auth state change detected!');
         }
+<<<<<<< HEAD
     });
+=======
+
+    });
+
+
+>>>>>>> master
 })
