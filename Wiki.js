@@ -55,7 +55,7 @@ $(document).ready(function(){
      $("#suggestedBooks").empty();
      $('#onlineResources').empty();
      var topic = $(this).attr("data-name");
-     var bookURL = "http://openlibrary.org/search.json?q=" + topic;
+     var bookURL = "https://openlibrary.org/search.json?q=" + topic;
      
  
      var apikey ="789e45a2a4014a3aa4ab244aafe10ff2";
@@ -97,7 +97,7 @@ $(document).ready(function(){
                }
             
              var bottom = $("<div>").attr("class","card-footer")
-             $("<a role=button>").attr({"class":"btn btn-warning bookbtn", "id":"buy"+n}).text("Buy").appendTo(bottom);
+             $("<a role=button>").attr({"class":"btn btn-warning bookbtn", "id":"buy"+n, target:"_blank"}).text("Buy").appendTo(bottom);
              $("<button type=button>").attr({"class":"btn btn-warning save", "id":"save"+n, "data-toggle":"modal","data-target":"#saveModal"}).text("Save").appendTo(bottom);
              bottom.appendTo("#book"+n);
         
@@ -192,7 +192,7 @@ $(document).ready(function(){
         
          var panelbottom = $("<div>").attr("class","alert alert-secondary panel-transparent");
          panelbottom.appendTo(panelgroup2body);
-         $('<a role="button" class="btn btn-primary bookbtn">').attr("id","download"+y).text("Download").appendTo(panelbottom);
+         $('<a role="button" class="btn btn-primary bookbtn" target="_blank">').attr("id","download"+y).text("Download").appendTo(panelbottom);
          $('<button type="button">').attr({"class":"btn btn-warning save", "data-toggle":"modal","data-target":"#saveModal"}).text("Save").appendTo(panelbottom);
          $(("#download"+y)).attr("href",data.webPages.value[i].url);
                                    
