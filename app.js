@@ -95,8 +95,10 @@ $(document).ready(function () {
                     console.log(snapshot.val().term);
                     console.log(snapshot.val());
                 });
+                
             });
 
+            
 
             console.log('signed in! Auth state change detected!');
             console.log(user.uid);
