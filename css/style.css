@@ -67,6 +67,10 @@ font-size: 14px;
   margin-top: 8px;
 }
 
+#myModal {
+  z-index: 99999999;
+}
+
 .modal-dialog {
     width: 300px;
 }
