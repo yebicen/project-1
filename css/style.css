@@ -1,5 +1,5 @@
 body{
-    background:url('images/bg2.jpg');
+    background:url('../images/bg2.jpg');
     padding:0;
 }
 
@@ -38,6 +38,15 @@ margin-top:0;
   margin-top: 8px;
 }
 
+#wrapTermList {
+  height: 200px;
+  overflow: auto;
+}
+
+#wrapTermList table {
+font-size: 14px;
+}
+
 /* API Responses Container */
 #content {
   float: right;
@@ -45,6 +54,10 @@ margin-top:0;
 }
 
 /* Login Modal */
+.error {
+  color: red;
+  font-weight: bold;
+}
 
 /*Login Launch button*/
 #loginLaunch {

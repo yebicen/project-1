@@ -1,12 +1,12 @@
 $(document).ready(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
-        authDomain: "project-1-97352.firebaseapp.com",
-        databaseURL: "https://project-1-97352.firebaseio.com",
-        projectId: "project-1-97352",
-        storageBucket: "project-1-97352.appspot.com",
-        messagingSenderId: "711415812320"
+        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
+        authDomain: "project1-e7460.firebaseapp.com",
+        databaseURL: "https://project1-e7460.firebaseio.com",
+        projectId: "project1-e7460",
+        storageBucket: "project1-e7460.appspot.com",
+        messagingSenderId: "87795057294"
     };
     firebase.initializeApp(config);
     // Get a reference to the database service
@@ -31,14 +31,15 @@ $(document).ready(function () {
                 console.log('User created!');
                 userUID = firebase.auth().currentUser.uid;
                 console.log(user.uid);
-                //?????????????????????????????????????????????????????????????????
+                //set userID in firebaseDB
                 firebase.database().ref('/Users/' + userUID).set({
                     email: email,
                 });
-                //?????????????????????????????????????????????????????????????????
+
             })
         } else {
             console.log("password does not match!");
+            $('#nav-register .modal-body').append('<div class="error">'+ 'Passwords do not match. Please enter matching passwords to register'+'</div>');
         }
 
     });
@@ -56,12 +57,23 @@ $(document).ready(function () {
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
+
+            if (errorCode == "auth/user-not-found") {
+                $('#nav-login .modal-body').append('<div class="error">'+ 'This username does not exist. Please register.'+'</div>');
+            }
+
+            else if (errorCode == "auth/wrong-password") {
+                $('#nav-login .modal-body').append('<div class="error">'+ 'Wrong Password. Please try again.'+'</div>');
+            }
             // ...
         }).then(function(){
+            //toggle modal off
             $('#loginLaunch').click();
+            //show "my collections" link
             $('#myAcct').show();
         });
     });
+
     $("#logOutBtn").on("click", function (event) {
         event.preventDefault();
         console.log('trying Sign out in!');
@@ -83,20 +95,13 @@ $(document).ready(function () {
             userUID = user.uid;
             $(".term").on("click", function (event) {
                 var term = $(this).attr("data-name");
-                firebase.database().ref('/Users/' + userUID).set({
+                var dateAdded = new Date().toUTCString();
+                firebase.database().ref('/Users/' + userUID).push({
                     term: term,
-                    dateAdded: firebase.database.ServerValue.TIMESTAMP
+                    dateAdded: dateAdded
                 });
                 console.log("worked!");
                 console.log(term);
-            });
-
-            $('#test').on("click", function (event) {
-                var ref = firebase.database().ref('/Users/' + userUID);
-                ref.once("value").then(function (snapshot) {
-                    console.log(snapshot.child("email").val());
-                    console.log(snapshot.child().child("term").val());
-                });
             });
 
             console.log('signed in! Auth state change detected!');
