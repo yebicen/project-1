@@ -1,12 +1,12 @@
 $(document).ready(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
-        authDomain: "project-1-97352.firebaseapp.com",
-        databaseURL: "https://project-1-97352.firebaseio.com",
-        projectId: "project-1-97352",
-        storageBucket: "project-1-97352.appspot.com",
-        messagingSenderId: "711415812320"
+        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
+        authDomain: "project1-e7460.firebaseapp.com",
+        databaseURL: "https://project1-e7460.firebaseio.com",
+        projectId: "project1-e7460",
+        storageBucket: "project1-e7460.appspot.com",
+        messagingSenderId: "87795057294"
     };
     firebase.initializeApp(config);
     // Get a reference to the database service
@@ -83,20 +83,13 @@ $(document).ready(function () {
             userUID = user.uid;
             $(".term").on("click", function (event) {
                 var term = $(this).attr("data-name");
-                firebase.database().ref('/Users/' + userUID).set({
+                var dateAdded = new Date().toUTCString();
+                firebase.database().ref('/Users/' + userUID).push({
                     term: term,
-                    dateAdded: firebase.database.ServerValue.TIMESTAMP
+                    dateAdded: dateAdded
                 });
                 console.log("worked!");
                 console.log(term);
-            });
-
-            $('#test').on("click", function (event) {
-                var ref = firebase.database().ref('/Users/' + userUID);
-                ref.once("value").then(function (snapshot) {
-                    console.log(snapshot.child("email").val());
-                    console.log(snapshot.child().child("term").val());
-                });
             });
 
             console.log('signed in! Auth state change detected!');

@@ -18,7 +18,8 @@
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="Wiki.js"></script>
     <script src="app.js"></script>
-    <title>Home</title>
+    <script src="app2.js"></script>
+    <title>My Collections - Programming Quick Learning Tool</title>
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -303,15 +304,25 @@
     <div id="content">
         <div class="container">
             <div class="row">
-                <table class="table table-striped">
-                    <thead>
-                        <th scope="col">Search Term</th>
-                        <th scope="col">Times Searched</th>
-                    </thead>
-                </table>
+                <div class="col-12">
+                    <h1>My Searches</h1>
+                    <div id="wrapTermList">
+                    <table id="termList" class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Search Term</th>
+                                <th scope="col">Date/Time Searched</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
             </div>
         </div>
-        <img src="images/web.jpg" width=100% alt="IMAGE LOADING">
+
         <div class="container">
             <div class="row" id="headings">
                 <div class="col-12">

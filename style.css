@@ -38,6 +38,15 @@ margin-top:0;
   margin-top: 8px;
 }
 
+#wrapTermList {
+  height: 200px;
+  overflow: auto;
+}
+
+#wrapTermList table {
+font-size: 14px;
+}
+
 /* API Responses Container */
 #content {
   float: right;

@@ -1,20 +1,5 @@
 $(document).ready(function () {
-    var config = {
-        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
-        authDomain: "project1-e7460.firebaseapp.com",
-        databaseURL: "https://project1-e7460.firebaseio.com",
-        projectId: "project1-e7460",
-        storageBucket: "project1-e7460.appspot.com",
-        messagingSenderId: "87795057294"
-    };
-    firebase.initializeApp(config);
 
-    $('#myAcct').hide();
-    $('#logOutBtn').hide();
-    $('#loginLaunch').hide();
-
-    $('#myAcctNew').show();
-    $('#homeBtn').show();
 
 
     var database = firebase.database();
@@ -31,10 +16,15 @@ $(document).ready(function () {
 
             var ref = database.ref('/Users/' + userUID);
 
-            //////
+            //
             ref.on("child_added", function (snapshot) {
                 console.log(snapshot.val().term);
-                $("#content").prepend('<button type="button" class="btn btn-primary">' + snapshot.val().term + '</button>');
+                if (snapshot.val().term != undefined) {
+                $("#termList tbody").prepend('<tr><td>' + snapshot.val().term + '</td><td>' + snapshot.val().dateAdded + '</td></tr>');
+                }
+                else {
+                    return false;
+                }
             });
 
         } else {
