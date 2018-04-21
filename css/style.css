@@ -402,6 +402,15 @@ table {
    .modal .modal-dialog {
      margin: 10px auto;
    }
+
+   .nav-side-menu ul, .nav-side-menu li {
+     line-height: 45px;
+     font-size: 16px;
+   }
+
+   .nav-side-menu ul .sub-menu li, .nav-side-menu li .sub-menu li {
+     line-height: 45px;
+   }
   }
 
 
