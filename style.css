@@ -11,6 +11,10 @@ body{
   margin-right: 10px;
 }
 
+.btn-light{
+  margin-left:10px;
+}
+
 .pagetitle{
 text-align: center;
 font-family: 'Baskerville', Times, serif;
@@ -329,7 +333,6 @@ table {
 .iw_table_icon {
   text-align: right;
 }
-
 
   @media (max-width: 767px) {
     .nav-side-menu {
