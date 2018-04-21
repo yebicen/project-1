@@ -19,8 +19,7 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
-
-
+    
     firebase.auth().onAuthStateChanged(function (user) {
         user = firebase.auth().currentUser;
         if (user) {
@@ -41,8 +40,5 @@ $(document).ready(function () {
             // No user is signed in.
             console.log('not signed in. Auth state change detected!');
         }
-
     });
-
-
 })
