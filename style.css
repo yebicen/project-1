@@ -3,6 +3,10 @@ body{
     padding:0;
 }
 
+#content .container {
+  width: 100%;
+}
+
 .btn-primary{
   margin-right: 10px;
 }
@@ -20,6 +24,7 @@ margin-top:0;
   font-size: 20px;
   color:white;
   margin-bottom:0;
+  margin-top: 10px;
   }
 /* my account button */
 #myAcct, #home, #logOutBtn {
@@ -98,6 +103,7 @@ margin-top:0;
     height: 100%;
     color: #e1ffff;
     padding-top: 50px;
+    z-index: 9999999;
   }
   .nav-side-menu .brand {
     width: 300px;
@@ -107,7 +113,7 @@ margin-top:0;
     display: block;
     text-align: center;
     font-size: 14px;
-    position:fixed;
+    position:absolute;
     top:0;
   }
   .nav-side-menu .toggle-btn {
@@ -224,6 +230,18 @@ margin-top:0;
   color:inherit;
 }
 
+.bookbtn {
+  margin-left: 0;
+}
+
+.w-100 .alert {
+  padding-left: 0;
+}
+
+#suggestedBooks {
+  padding: 1rem;
+}
+
 /* googlemap css */
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
@@ -313,16 +331,11 @@ table {
 }
 
 
-
-
-
-
-
   @media (max-width: 767px) {
     .nav-side-menu {
       position: relative;
       width: 100%;
-      margin-bottom: 10px;
+
     }
     .nav-side-menu .toggle-btn {
       display: block;
@@ -337,11 +350,12 @@ table {
       width: 40px;
       text-align: center;
     }
-    .brand {
+    .nav-side-menu .brand {
       text-align: left !important;
       font-size: 22px;
       padding-left: 20px;
       line-height: 50px !important;
+      width: 100%;
     }
   }
   @media (min-width: 767px) {
@@ -352,8 +366,12 @@ table {
 
 
   @media (max-width: 769px) {
-    #loginLaunch {
+    #loginLaunch, #logOutBtn {
       margin-right: 60px;
+    }
+
+    .nav-side-menu {
+      height: auto;
     }
 
     #content {

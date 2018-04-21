@@ -1,12 +1,12 @@
 $(document).ready(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyC0rCQY0jzdWe5AhcQpvIuKMr9XbnRWDsk",
-        authDomain: "project1-e7460.firebaseapp.com",
-        databaseURL: "https://project1-e7460.firebaseio.com",
-        projectId: "project1-e7460",
-        storageBucket: "project1-e7460.appspot.com",
-        messagingSenderId: "87795057294"
+        apiKey: "AIzaSyBQKVvElJCzBRpp49UB1kXZVfnM_ty9fOU",
+        authDomain: "project-1-97352.firebaseapp.com",
+        databaseURL: "https://project-1-97352.firebaseio.com",
+        projectId: "project-1-97352",
+        storageBucket: "project-1-97352.appspot.com",
+        messagingSenderId: "711415812320"
     };
     firebase.initializeApp(config);
     // Get a reference to the database service
