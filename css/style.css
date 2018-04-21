@@ -54,6 +54,10 @@ font-size: 14px;
 }
 
 /* Login Modal */
+.error {
+  color: red;
+  font-weight: bold;
+}
 
 /*Login Launch button*/
 #loginLaunch {

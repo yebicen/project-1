@@ -31,14 +31,15 @@ $(document).ready(function () {
                 console.log('User created!');
                 userUID = firebase.auth().currentUser.uid;
                 console.log(user.uid);
-                //?????????????????????????????????????????????????????????????????
+                //set userID in firebaseDB
                 firebase.database().ref('/Users/' + userUID).set({
                     email: email,
                 });
-                //?????????????????????????????????????????????????????????????????
+
             })
         } else {
             console.log("password does not match!");
+            $('#nav-register .modal-body').append('<div class="error">'+ 'Passwords do not match. Please enter matching passwords to register'+'</div>');
         }
 
     });
@@ -56,12 +57,23 @@ $(document).ready(function () {
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
+
+            if (errorCode == "auth/user-not-found") {
+                $('#nav-login .modal-body').append('<div class="error">'+ 'This username does not exist. Please register.'+'</div>');
+            }
+
+            else if (errorCode == "auth/wrong-password") {
+                $('#nav-login .modal-body').append('<div class="error">'+ 'Wrong Password. Please try again.'+'</div>');
+            }
             // ...
         }).then(function(){
+            //toggle modal off
             $('#loginLaunch').click();
+            //show "my collections" link
             $('#myAcct').show();
         });
     });
+
     $("#logOutBtn").on("click", function (event) {
         event.preventDefault();
         console.log('trying Sign out in!');
