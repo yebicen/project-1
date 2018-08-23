@@ -1,4 +1,5 @@
-http://g.recordit.co/fkBOl30PaJ.gif
+![Alt Text](http://g.recordit.co/fkBOl30PaJ.gif)
+
 
 
 # Quick Learn Tool
