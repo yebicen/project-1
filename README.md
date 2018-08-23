@@ -1,4 +1,10 @@
+http://g.recordit.co/fkBOl30PaJ.gif
+
+
 # Quick Learn Tool
+https://geochanto.github.io/project-1/
+
+
 This app will helps users learn various programming languages. The application displays categorized list of programming languages. Users can select a category on which they need more information. The application uses wikipedia API, Openlibrary API and Bing API to fetch wikipedia article summary, and a list of books about the topic. 
 
 Users are authenticated using Firebase email/password authentication.
