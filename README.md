@@ -1,4 +1,4 @@
-![Alt Text](http://recordit.co/76v8ut6m2A)
+
 
 # Quick Learn Tool
 https://geochanto.github.io/project-1/
