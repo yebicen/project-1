@@ -1,6 +1,6 @@
 ![Alt Text](http://g.recordit.co/fkBOl30PaJ.gif)
 
-sdsd
+
 
 # Quick Learn Tool
 https://geochanto.github.io/project-1/
