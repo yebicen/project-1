@@ -45,11 +45,12 @@ Add your own spin to this app:
 4. Add other APIs or resources
 
 ## Contributors
-#### Ally Mao
-#### https://github.com/AllyMao85/
----
+
 ##### Bicen Ye
 ##### https://github.com/yebicen/
+---
+#### Ally Mao
+#### https://github.com/AllyMao85/
 ---
 ##### George Chanturidze
 ##### https://github.com/geochanto/
