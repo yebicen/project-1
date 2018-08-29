@@ -1,6 +1,6 @@
-![Alt Text](http://g.recordit.co/XInm7YcIUy.gif)
+![Alt Text](Project1_a.gif)
 
-![Alt Text](http://g.recordit.co/KLR7mTMyxY.gif)
+![Alt Text](Project1_b.gif)
 
 # Quick Learn Tool
 https://geochanto.github.io/project-1/
