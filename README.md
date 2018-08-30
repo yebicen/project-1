@@ -18,12 +18,13 @@ Once users log in, their user ID is saved in Firebase Database. Once logged-in u
 1. Bing API
 2. Wikipedia API
 3. Openlibrary API
-4. Firebase Database
-5. Firebase Authentication
-6. Javascript & jQuery
-7. Bootstrap CSS Framework
-8. HTML5
-9. Google Analytics to track user activity
+4. Google Places API
+5. Firebase Database
+6. Firebase Authentication
+7. Javascript & jQuery
+8. Bootstrap CSS Framework
+9. HTML5
+10. Google Analytics to track user activity
 
 
 ## Why this project?
